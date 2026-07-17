@@ -99,24 +99,24 @@ uart-rtl-to-gdsii/
 
 ---
 
-## How to Reproduce
+## How to Clone
 
 ```bash
 # 1. Clone the repo
-git clone git@github.com:BANSHIDHARSAHOO/UART_ASIC_IMPLEMENTATION.git
-cd uart-rtl-to-gdsii
+git clone https://github.com/BANSHIDHARSAHOO/UART_ASIC_IMPLEMENTATION.git
+cd UART_ASIC_IMPLEMENTATION
 
 # 2. Simulate
+mkdir -p sim
 iverilog -g2005 -Wall rtl/*.v tb/UART_TB.v -o sim/uart_sim.out
 vvp sim/uart_sim.out
 
 # 3. Synthesise
 cd synth && yosys synth_uart.ys
 
-# 4. Run full OpenLane flow
-cd ../openlane && openlane config.json
-```
-
+# 4. View Chip Layout
+cd ..
+klayout gds/UART.gds
 ---
 
 ## Tools and Versions
