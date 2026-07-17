@@ -1,0 +1,5 @@
+gds/
+sim/*.vcd
+sim/*.out
+*.log
+__pycache__/

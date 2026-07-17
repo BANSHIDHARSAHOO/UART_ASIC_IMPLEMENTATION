@@ -1,0 +1,7 @@
+%Warning-WIDTHTRUNC: rtl/Serializer.v:48:35: Operator ASSIGNDLY expects 9 bits on the Assign RHS, but Assign RHS's SHIFTR generates 10 bits.
+                                           : ... note: In instance 'UART.txtop.serializer'
+   48 |                 {memory, dataOut} <= {1'b0, memory, dataOut} >> 1;
+      |                                   ^~
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.038
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)

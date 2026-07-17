@@ -1,0 +1,10 @@
+{
+    "DESIGN_NAME": "UART",
+    "VERILOG_FILES": "dir::src/*.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 25.0,
+    "FP_CORE_UTIL": 40,
+    "PL_TARGET_DENSITY": 0.4,
+    "SYNTH_MAX_FANOUT": 8,
+    "RUN_LVS": 1
+}

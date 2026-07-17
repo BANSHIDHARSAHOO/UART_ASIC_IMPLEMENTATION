@@ -1,0 +1,20 @@
+read_verilog ../rtl/UART.v
+read_verilog ../rtl/TXTOP.v
+read_verilog ../rtl/RXTOP.v
+read_verilog ../rtl/BAUD_RATE_GENERATOR.v
+read_verilog ../rtl/FSMTX.v
+read_verilog ../rtl/FSMRX.v
+read_verilog ../rtl/Serializer.v
+read_verilog ../rtl/Deserializer.v
+read_verilog ../rtl/ParityCalculator.v
+read_verilog ../rtl/ParityCheck.v
+read_verilog ../rtl/MUX.v
+read_verilog ../rtl/RX_SYNC.v
+hierarchy -check -top UART
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+dfflibmap -liberty /labroot/open_pdks/sky130/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty /labroot/open_pdks/sky130/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+clean
+write_verilog -noattr uart_netlist.v
+stat -liberty /labroot/open_pdks/sky130/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
