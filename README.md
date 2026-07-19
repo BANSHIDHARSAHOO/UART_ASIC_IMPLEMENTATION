@@ -31,9 +31,8 @@ manufacturable GDS II layout — using 100% open-source EDA tools.
 | Bugs Fixed              | 9 (including 4 tapeout blockers) |
 
 ---
-
+```
 ## UART Architecture
----
 UART (top)
 ├── BAUD_RATE_GENERATOR.v   — 12-bit counter pulse engine
 ├── RX_SYNC.v               — 2-flip-flop input synchroniser (metastability)
@@ -46,11 +45,11 @@ UART (top)
 ├── FSMRX.v             — 5-state FSM with 16x oversampling
 ├── Deserializer.v      — Serial-to-parallel reconstruction
 └── ParityCheck.v       — XOR error detector
----
+```
 ---
 
 ## RTL to GDS II Flow
----
+```
 13 Verilog Files
 │
 ▼
@@ -70,11 +69,11 @@ Physical Design →  OpenLane (48 steps)         →  UART.gds
 │
 ▼
 Verification    →  Magic + Netgen + KLayout    →  DRC=0, LVS=pass
----
+```
 ---
 
 ## Bugs Fixed
----
+```
 
 | # | Severity | File | Bug | Fix |
 |---|----------|------|-----|-----|
@@ -87,11 +86,11 @@ Verification    →  Magic + Netgen + KLayout    →  DRC=0, LVS=pass
 | 7 | Moderate | UART.v | No RX input synchroniser | Added RX_SYNC.v module |
 | 8 | TB only | UART_TB.v | Wrong instance reference | Fixed typo |
 | 9 | TB only | UART_TB.v | 32-bit div port mismatch | Changed to 12-bit |
----
+```
 ---
 
 ## Repository Structure
----
+```
 uart-rtl-to-gdsii/
 ├── rtl/              — 13 fixed Verilog RTL modules
 ├── tb/               — Dual-clock CDC testbench
@@ -100,7 +99,7 @@ uart-rtl-to-gdsii/
 ├── openlane/         — config.json for OpenLane flow
 ├── reports/          — Synthesis, timing, DRC, LVS reports
 └── gds/              — Final GDS II layout file
----
+```
 ---
 
 ## How to Clone
