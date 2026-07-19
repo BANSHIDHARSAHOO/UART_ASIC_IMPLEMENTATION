@@ -11,7 +11,6 @@
 Full-duplex UART (Universal Asynchronous Receiver-Transmitter) implemented through
 the complete ASIC physical design flow — from behavioural Verilog RTL to a
 manufacturable GDS II layout — using 100% open-source EDA tools.
-
 ---
 
 ## Key Results
@@ -31,8 +30,10 @@ manufacturable GDS II layout — using 100% open-source EDA tools.
 | Bugs Fixed              | 9 (including 4 tapeout blockers) |
 
 ---
-```
+
 ## UART Architecture
+
+```
 UART (top)
 ├── BAUD_RATE_GENERATOR.v   — 12-bit counter pulse engine
 ├── RX_SYNC.v               — 2-flip-flop input synchroniser (metastability)
